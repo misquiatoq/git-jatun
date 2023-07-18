@@ -4,16 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wilson</title>
+</head>
+<body>
     <div>
         <h1>
             GIT
         </h1>
-        <h2>Inicializar con Git 📌</h2>
-        <p> Entrar a la terminal, buscamos la carpeta de nuestro proyecto y entramos a ese directorio con cd<br> Dentro de la carpeta donde está el proyecto, se inicializa un control de versión:</p>
-        <blockquote>git init</blockquote>
+            <h2>Inicializar con Git 📌</h2>
+                <p> Entrar a la terminal, buscamos la carpeta de nuestro proyecto y entramos a ese directorio con cd<br> Dentro de la carpeta donde está el proyecto, se inicializa un control de versión:</p>
+                <code>git init</code>
+                <br>
+                <p>Con el comando git status permite ver que archivos se han añadido, de esta forma se hace un seguimiento:</p>
+                <code>git status</code>
+                <br>
+                <cite>Nota: si en la salida dice que hay Untracked files, quiere decir que se tenia un archivo antes de crear el repositorio y hay que agregarlo.</cite>
+                <p>Para agregar archivos a stage usar:</p>
+                <code>git add archivo.extensión</code>
+                <p>Por ejemplo si queremos agregar web.html:</p>
+                <code>git add web.html</code>
+                <p>Cuando se quiera añadir todo sin especificar, se ejecuta:</p>
+                <code>git add .</code>
+            <h2>Configurar Git localmente 📌</h2>
+                <p>En la terminal ejecutar:</p>
+                <code>git config --global user.name [name]</code>
+                <br>
+                <p>//[en name colocar el nombre de usuario de GitHub], dar ENTER</p>
+                <code>git config --global user.email [email]</code>
+                <br>
+                <p>//[en email colocar el correo de GitHub], dar ENTER</p>
+                <p>Si quieres comprobar tu configuración, puedes usar un comando para mostrar todas las propiedades que Git ha configurado:</p>
+                <code>git config --list</code>
+            <h2>Hacer commit 📌</h2>
+                <p>Los commits representan el cambio que se guarda en el repositorio de versiones, donde podemos regresar a versiones pasadas y modificarlas. Los commits se pueden considerar como instantáneas o hitos a lo largo de la línea de tiempo de un proyecto de Git. Las confirmaciones se crean con el comando git commit para capturar el estado de un proyecto en ese momento. Las instantáneas de Git siempre se envían al repositorio local (fuente: aquí).</p>
+                <p>En la terminal en la ruta del proyecto, ejecutar:</p>
+                <code>git commit -m "Message"</code>
+                    <ul>
+                        <li>-m:especifica donde va el mensaje.</li>
+                        <li>"Message": va con comillas y por lo general es la descripción del commit.</li>
+                    </ul>
+                <p>Por ejemplo:</p>
+                <code>git commit -m "Mi primer commit"</code>
+                <p>Para ver los commit que se ha hecho:</p>
+                <code>git log</code>
+            <h3>Crear Repositorio en GitHub 📌</h3>
+                <p>Para subir los commit a GitHub, ir a la página GitHub ya iniciado sesión, en Profile dar donde dice Your repositories y luego en el botón verde New.</p>
+                <p>Al configurar el repositorio, se coloca el nombre (se recomienda colocar el mismo que la carpeta que tenemos localmente).
+                <br>
+                Se puede poner una descripción en la casilla de “Description”.
+                <br> 
+                Se puede seleccionar si se quiere público o privado.
+                br 
+                También existen otras casillas que dependiendo de la complejidad del proyecto se requiera configurar.
+                <br>   
+                Una vez configurado todo, se da en el botón verde Create repository.</p>
+                <p>Una vez creado el repositorio, se copia la direcciónn que sale en Quick setup.
+                <br>
+                Vamos a la terminal se pone:
+                </p>
+                <code>git remote add origin <strong>url_que_copiaste</strong></code>
+                <p>Para hacer una verificación se hace:</p>
+                <code>git remote -v</code>
+            <h2>Hacer push 📌</h2>
+                <p>El comando git push te permite subir los commits desde tu rama (branch) local en tu repositorio git local al repositorio remoto (fuente: aquí).
+     
+                Por defecto, Git elige origin como remoto y tu rama actual como la rama a la que subir. Si tu rama actual es main, el comando git push suministrará los dos parámetros por defecto, o si es master colocar master.</p>
+                <p>Por ejemplo poner en la terminal:</p>
+                <code>git push origin main</code>
+                <cite>Nota: cada vez que se realice un cambio en el projecto repetir todos los pasos anteriores desde git add hasta hacer el push.</cite>
     </div>
-</head>
-<body>
-    
 </body>
 </html>
